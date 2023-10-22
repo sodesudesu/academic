@@ -19,20 +19,19 @@ float=[H],
 
 %%%%%%
 \begin{document}
-\begin{flushright}
-2023年夏休みの自由研究\\
-TAIYO\\
-
-\end{flushright}
 \noindent
 {\Large%
 \textbf{%
 プログラミング（ガチ）初心者がIsingモデルのマルコフ連鎖モンテカルロシミュレーションに挑戦した話
 }}
 
+\noindent
+\textbf{%
+2023年夏休みの自由研究\\
+TAIYO
+}
+
 \begin{quotation}
-\mbox{}\\
-\indent
 なんだかんだで後回しにしていたMCMC法の実践の記録を（わざわざ）残しておく。
 ネットとかプログラミングの本とかにたくさんコードの例はあるけれど、物理的な部分の説明は省略されていることがほとんどなので、ここではそういうことも記す。
 だから後々読み返したときに役立つだろうと思う、たぶん。
@@ -393,7 +392,7 @@ $x = N$の場合と同じ仕組みを利用した。
          theme(legend.position = "none")
 \end{lstlisting}
 下図が、系の最終状態の様子（の例）。
-もちろんこれが収束している状態とは限らないので、必要ならば最大試行回数$t$の値を大きくしたり、コードの\texttt{\#simulate}以下の部分をもう何回か繰り返すなどが必要だ。
+もちろんこれが収束している状態とは限らないので、必要ならば最大試行回数$t$の値を大きくしたり、コードの\texttt{\#simulate}以下の部分をもう何回か繰り返すなどの手間暇が必要だ。
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=15cm]{f2.png}
