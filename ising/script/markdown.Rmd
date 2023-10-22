@@ -1,0 +1,49 @@
+---
+title: "Markov chain Monte Carlo methods of Ising model"
+author: "Taiyo"
+date: "2023-10-22"
+output: html_document
+---
+
+なんだかんだで後回しにしていたMCMC法の実践の記録を（わざわざ）残しておく。
+ネットとかプログラミングの本とかにたくさんコードの例はあるけれど、物理的な部分の説明は省略されていることがほとんどなので、ここではそういうことも記す。
+だから後々読み返したときに役立つだろうと思う、たぶん。
+プログラミング力がついてからもう一度実践、またはコードの改善や別のプログラミング言語で再現する際の出発点にもなる。
+使用言語はR（Rでやっている文献や記事が少なかった、というのもこれを書く動機にはなっている）。
+
+## 系の設定と戦略
+
+### 統計力学からの復習
+
+正方格子系のハミルトニアンは
+$$
+E = -J \sum_{ \langle i, j \rangle } S_i S_j - H \sum_{i} S_i
+$$
+とする。
+ここに、$i$は格子点のうちの1点、$j$は$i$と隣り合う4つの点としている。
+また、$S_i , S_j $はそれぞれ点$i,j$でのスピン変数($S_i = \pm 1,S_j = \pm 1$)で、$J$は交換相互作用定数、$H$は外部磁場に磁気モーメント$\mu _0$をかけて次元をエネルギーに変更したものである。
+
+ここで、ある点Oに着目し、この点のスピン変数を$S_0 $と書く。
+$H = 0$とすれば、注目した点Oについての(1)は
+$$
+\begin{align} \label{eq:1.2}
+E = -J S_0 (S_1 + S_2 + S_3 + S_4 )
+\end{align}
+$$
+と書き換えられる。
+$S_1 ,\, S_2 ,\, S_3 ,\, S_4 $は格子点Oと隣り合う4つの点のスピン変数である。
+言うまでもなく、$S_0 $が$1$をとればハミルトニアン(\ref{eq:1.2})は$E_\uparrow = -J (S_1 + S_2 + S_3 + S_4 )$となり、$S_0 $が$-1$をとれば$E_\downarrow = J (S_1 + S_2 + S_3 + S_4 )$となる。
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=TRUE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
