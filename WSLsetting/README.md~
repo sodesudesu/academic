@@ -1,0 +1,13 @@
+# WSLでubuntuをインストールし、Python、R、LaTeXなどの開発環境をemacsで用意する
+
+忘れないためのメモなので、うそをついているかもしれません。
+次のものを参考にしました：
+- [奥村晴彦さんのＷｅｂページおよびYouTube動画](https://okumuralab.org/~okumura/misc/221004.html)
+
+## WSLとUbuntuのインストール
+
+ずぶんはWindown Terminalというアプリを使ってインストールをおこないいました。
+曖昧な記憶ですが、Windows Terminalはデフォルトでインストールされているはずです。
+
+Windows Terminalではデフォルトでpower shellが立ち上がると思いますが、これを管理者権限で立ち上げます。
+そのために、Windows Terminalのウィンドウの下矢印をクリックし、Windows Power Shellというやつをコントロールを押しながらクリックします。

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+</head>
+
+<body>
+
+<h1>WSLでubuntuをインストールし、Python、R、LaTeXなどの開発環境をemacsで用意する</h1>
+
+<p>（準備中）
+忘れないためのいい加減なメモなので、うそをついているかもしれません。
+次のものを参考にしました：</p>
+
+<ul>
+<li><a href="https://okumuralab.org/~okumura/misc/221004.html">奥村晴彦さんのWebページおよびYouTube動画</a></li>
+</ul>
+
+<h2>WSLとUbuntuのインストール</h2>
+
+<p>ずぶんはWindown Terminalというアプリを使ってインストールをおこないいました。
+曖昧な記憶ですが、Windows Terminalはデフォルトでインストールされているはずです。</p>
+
+<p>Windows Terminalではデフォルトでpower shellが立ち上がると思いますが、これを管理者権限で立ち上げます。
+そのために、Windows Terminalのウィンドウの下矢印をクリックし、Windows Power Shellというやつをコントロールを押しながらクリックします。</p>
+
+<p>「変更を加えますか」的なメッセージには「はい」と回答します。</p>
+
+<p>次のコマンドを入力すれば、wsl2がインストールされ勝手にubuntuもインストールしてくれます。</p>
+
+<p><code>
+PS C:\Users\MrChildren&gt;wsl --install
+</code></p>
+
+</body>
+</html>
