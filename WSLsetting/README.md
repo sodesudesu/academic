@@ -5,7 +5,8 @@
 忘れないためのいい加減なメモなので、うそをついているかもしれません。
 
 WindowsでRの開発環境を準備しようとすると、パッケージ保存先のパスに日本語が入り、インストールがストップしてしまうというトラブルがあるらしいです。
-一度Linuxに開発環境を作ってしまうのが楽だと思います。
+そのほか文字コードトラブルもWindows環境では多いように感じます。
+だから一度Linuxに開発環境を作ってしまうのが楽だと思います。
 
 ## 準備
 
@@ -38,7 +39,7 @@ PS C:\Users\taiyo> wsl --install
 再起動後に再びWindows Terminalを起動します。
 ウィンドウの上の方にある下矢印をクリックすると、ubuntuというボタンができていると思うので、それをクリックすると、ubuntuが起動できます。
 
-user名とパスワードの登録をさせられます（登録しろと表示されない場合は下の\x{SNOWMAN}の解説へ）。
+user名とパスワードの登録をさせられます（登録しろと表示されない場合は下の\x{2603}の解説へ）。
 
 パッケージ情報の更新をするために、以下のコマンドを順に実行します。
 ```
@@ -50,7 +51,7 @@ sudo apt upgrade
 
 パスワードを聞かれると思いますが、先ほど登録したものを入力します。
 
-\x{SNOWMAN}
+\x{2603}
 初期user登録画面に遷移せず、root権限で止まってしまうことも稀にあるみたいです。
 その場合、そのままubuntuのterminalで
 ```sh
@@ -58,7 +59,7 @@ adduser MrChildren
 ```
 を打ち込みユーザー名を登録し（MrChildrenの部分には自分で決めたuser名を入力してください）、
 ```sh
-sudo gpasswd -a MrChildren sodo
+sudo gpasswd -a MrChildren sudo
 ```
 でsudo権限をMrChildrenに（くどいが、MrChildrenの部分は自分のuser名に置き換えてください）与えます。
 
@@ -70,11 +71,11 @@ wslを再インストール後に起動すると、「WSLにアタッチでき�
 wsl --unregister Ubuntu
 ```
 というコマンドを入力したら解決できるはずです。
-上の「aptのアップグレード」という節の操作をおこなってください。
+これが済んだら、上の「aptのアップグレード」という節の操作をおこなってください。
 
 ## 各プログラミング言語の開発環境の構築
 
-すでに、perlやawk、pythonは使える状態になっています。
+すでに、Perlやawk、Pythonは使える状態になっています。
 以下、2024年2月8日現在のバージョン：
 ```sh
 taiyo@DESKTOP-904B5HO:~$ perl -v
@@ -205,14 +206,15 @@ pip install --upgrade pip
 
 ### R
 
-#### 楽な方法その1
+#### 楽な方法
 
 aptでインストールできます。
 ```sh
 sudo apt install r-base
 ```
 
-### 楽な方法その2
+<!--
+#### 楽な方法その2
 
 CRANの[このページ](https://cran.ism.ac.jp/bin/linux/ubuntu/)に従っておこないます。
 以下、2023年10月11日におこなったインストール手順です。
@@ -243,7 +245,7 @@ sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu jammy-
 ```sh
 sudo apt install r-base
 ```
-
+-->
 これで、Rが使えるようになったので、確認します。
 そのままTerminalで、`R`と打てば、Rが起動します。
 
